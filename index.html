@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shreenagar Tent House | Event Management</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Georgia', serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Navbar Styles */
+        nav {
+            background-color: #d9371f; /* Red color inspired by Nepali events */
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li:last-child {
+            margin-right: 0;
+        }
+
+        nav ul li a {
+            font-size: 18px;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00; /* Golden yellow */
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #d9371f;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            margin-top: 10px;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #d9371f;
+        }
+
+        section p {
+            font-size: 1.1em;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        /* Services */
+        .services .service-box {
+            display: inline-block;
+            width: 250px;
+            margin: 10px;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .services .service-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .services img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .services .service-box h3 {
+            color: #d9371f;
+            margin-top: 15px;
+            font-size: 1.5em;
+        }
+
+        /* Gallery */
+        .gallery img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: #f8f9fa;
+            padding: 40px 20px;
+        }
+
+        .testimonials .testimonial-item {
+            display: inline-block;
+            width: 30%;
+            margin: 15px;
+            text-align: center;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonials .testimonial-item p {
+            font-size: 1.1em;
+            color: #777;
+        }
+
+        .testimonials .testimonial-item h4 {
+            color: #d9371f;
+            margin-top: 15px;
+            font-size: 1.2em;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #d9371f;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 1em;
+        }
+
+        footer a {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .services .service-box, .testimonials .testimonial-item {
+                width: 100%;
+            }
+
+            .testimonials {
+                padding: 20px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <h1>Shreenagar Tent House</h1>
+        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Welcome to Shreenagar Tent House</h1>
+        <p>Your go-to event management service for weddings, parties, and celebrations in Nepal!</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Shreenagar Tent House is a premier event management company, specializing in providing high-quality tents, decoration, and event services for weddings, festivals, corporate events, and private parties. Our goal is to make every event a memorable experience, blending tradition with modern elegance.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service-box">
+                <img src="https://via.placeholder.com/250" alt="Event Planning">
+                <h3>Event Planning</h3>
+                <p>We handle every aspect of your event, from concept to execution, ensuring a seamless experience.</p>
+            </div>
+            <div class="service-box">
+                <img src="https://via.placeholder.com/250" alt="Tent Rentals">
+                <h3>Tent Rentals</h3>
+                <p>Choose from a wide variety of tents for your events, ranging from intimate gatherings to grand celebrations.</p>
+            </div>
+            <div class="service-box">
+                <img src="https://via.placeholder.com/250" alt="Decorations">
+                <h3>Event Decorations</h3>
+                <p>Our team creates stunning decorations that reflect the cultural richness of Nepali events and festivals.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="https://via.placeholder.com/800x500" alt="Event Image 1">
+            <img src="https://via.placeholder.com/800x500" alt="Event Image 2">
+            <img src="https://via.placeholder.com/800x500" alt="Event Image 3">
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-item">
+            <p>"Shreenagar Tent House made our wedding a dream come true! The decorations were breathtaking and the service was excellent."</p>
+            <h4>Rina & Sanjay</h4>
+        </div>
+        <div class="testimonial-item">
+            <p>"We rented a tent for our family gathering, and everything was perfect! Highly recommend their services."</p>
+            <h4>Sarita & Rajesh</h4>
+        </div>
+        <div class="testimonial-item">
+            <p>"Professional and reliable! Shreenagar Tent House handled our corporate event with precision and creativity."</p>
+            <h4>Suraj & Team</h4>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you'd like to book our services or inquire more about our offerings, please reach out to us below:</p>
+        <p>Email: <a href="mailto:info@shreenagartent.com">info@shreenagartent.com</a></p>
+        <p>Phone: +977 01 2345678</p>
+        <p>Address: Shreenagar, Kathmandu, Nepal</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Shreenagar Tent House. All rights reserved. | <a href="mailto:info@shreenagartent.com">Contact Us</a></p>
+    </footer>
+
+</body>
+</html>
