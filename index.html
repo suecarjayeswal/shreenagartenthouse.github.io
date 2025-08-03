@@ -241,6 +241,177 @@
             border-radius: 2px;
         }
 
+        /* Image Carousel Section */
+        .carousel-section {
+            padding: 80px 0;
+            background: var(--pure-white);
+            position: relative;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            width: 500%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide {
+            width: 20%;
+            height: 100%;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .carousel-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: var(--pure-white);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .carousel-overlay h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .carousel-overlay p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(163, 22, 33, 0.8);
+            color: var(--pure-white);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            z-index: 10;
+            backdrop-filter: blur(5px);
+        }
+
+        .carousel-btn:hover {
+            background: var(--silk-red);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: var(--shadow);
+        }
+
+        .carousel-prev {
+            left: 20px;
+        }
+
+        .carousel-next {
+            right: 20px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+            z-index: 10;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 2px solid var(--pure-white);
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active,
+        .indicator:hover {
+            background: var(--festival-gold);
+            border-color: var(--festival-gold);
+            transform: scale(1.2);
+        }
+
+        /* Gallery CTA */
+        .gallery-cta {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 3rem;
+            background: var(--silk-ivory);
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .gallery-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="gold-shimmer" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="%23FFD700" opacity="0.1"/><circle cx="10" cy="30" r="0.5" fill="%23FFD700" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23gold-shimmer)"/></svg>');
+            border-radius: 20px;
+        }
+
+        .gallery-cta h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--silk-red);
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .gallery-cta p {
+            font-size: 1.1rem;
+            color: var(--charcoal-black);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .gallery-btn {
+            position: relative;
+            z-index: 2;
+        }
+
         /* Quick Overview Section */
         .overview {
             padding: 100px 0;
@@ -571,6 +742,45 @@
             .services-grid {
                 grid-template-columns: 1fr;
             }
+
+            /* Carousel responsive */
+            .carousel-wrapper {
+                height: 350px;
+            }
+
+            .carousel-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .carousel-prev {
+                left: 10px;
+            }
+
+            .carousel-next {
+                right: 10px;
+            }
+
+            .carousel-overlay {
+                padding: 2rem 1.5rem 1.5rem;
+            }
+
+            .carousel-overlay h3 {
+                font-size: 1.5rem;
+            }
+
+            .carousel-overlay p {
+                font-size: 1rem;
+            }
+
+            .gallery-cta {
+                padding: 2rem;
+            }
+
+            .gallery-cta h3 {
+                font-size: 1.8rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -593,6 +803,35 @@
 
             .section-title {
                 font-size: 1.8rem;
+            }
+
+            /* Carousel mobile */
+            .carousel-wrapper {
+                height: 250px;
+            }
+
+            .carousel-overlay {
+                padding: 1.5rem 1rem 1rem;
+            }
+
+            .carousel-overlay h3 {
+                font-size: 1.2rem;
+            }
+
+            .carousel-overlay p {
+                font-size: 0.9rem;
+            }
+
+            .gallery-cta {
+                padding: 1.5rem;
+            }
+
+            .gallery-cta h3 {
+                font-size: 1.5rem;
+            }
+
+            .gallery-cta p {
+                font-size: 1rem;
             }
         }
     </style>
@@ -640,6 +879,80 @@
                         Call Now
                     </a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Carousel Section -->
+    <section class="carousel-section">
+        <div class="container">
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="carouselTrack">
+                        <div class="carousel-slide active">
+                            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Beautiful Wedding Ceremony" loading="lazy">
+                            <div class="carousel-overlay">
+                                <h3>Elegant Wedding Celebrations</h3>
+                                <p>Creating magical moments for your special day</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Birthday Party Setup" loading="lazy">
+                            <div class="carousel-overlay">
+                                <h3>Joyful Birthday Parties</h3>
+                                <p>Colorful celebrations filled with happiness</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Corporate Event" loading="lazy">
+                            <div class="carousel-overlay">
+                                <h3>Professional Corporate Events</h3>
+                                <p>Sophisticated gatherings for business success</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Traditional Ceremony" loading="lazy">
+                            <div class="carousel-overlay">
+                                <h3>Sacred Traditional Ceremonies</h3>
+                                <p>Honoring culture with modern elegance</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://images.unsplash.com/photo-1478146896981-b80fe463b330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Event Decoration" loading="lazy">
+                            <div class="carousel-overlay">
+                                <h3>Stunning Event Decorations</h3>
+                                <p>Beautiful setups that create lasting memories</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carousel Navigation -->
+                <button class="carousel-btn carousel-prev" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn carousel-next" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <!-- Carousel Indicators -->
+                <div class="carousel-indicators">
+                    <button class="indicator active" data-slide="0"></button>
+                    <button class="indicator" data-slide="1"></button>
+                    <button class="indicator" data-slide="2"></button>
+                    <button class="indicator" data-slide="3"></button>
+                    <button class="indicator" data-slide="4"></button>
+                </div>
+            </div>
+            
+            <!-- Gallery CTA -->
+            <div class="gallery-cta">
+                <h3>Explore Our Complete Gallery</h3>
+                <p>Discover hundreds of beautiful moments we've captured across all our events</p>
+                <a href="gallery.html" class="btn btn-primary gallery-btn">
+                    <i class="fas fa-images"></i>
+                    View Full Gallery
+                </a>
             </div>
         </div>
     </section>
@@ -854,6 +1167,94 @@
             } else {
                 navbar.style.background = 'rgba(255, 255, 255, 0.95)';
                 navbar.style.boxShadow = '0 4px 15px rgba(163, 22, 33, 0.1)';
+            }
+        });
+
+        // Image Carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const indicators = document.querySelectorAll('.indicator');
+        const totalSlides = slides.length;
+        const carouselTrack = document.getElementById('carouselTrack');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function updateCarousel() {
+            const translateX = -currentSlide * (100 / totalSlides);
+            carouselTrack.style.transform = `translateX(${translateX}%)`;
+            
+            // Update indicators
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        // Event listeners
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Indicator clicks
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentSlide = index;
+                updateCarousel();
+            });
+        });
+
+        // Auto-play carousel
+        let autoPlayInterval = setInterval(nextSlide, 5000);
+
+        // Pause auto-play on hover
+        const carouselContainer = document.querySelector('.carousel-container');
+        carouselContainer.addEventListener('mouseenter', () => {
+            clearInterval(autoPlayInterval);
+        });
+
+        carouselContainer.addEventListener('mouseleave', () => {
+            autoPlayInterval = setInterval(nextSlide, 5000);
+        });
+
+        // Touch/swipe support for mobile
+        let startX = 0;
+        let endX = 0;
+
+        carouselContainer.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        carouselContainer.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+        });
+
+        carouselContainer.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            const diffX = startX - endX;
+            
+            if (Math.abs(diffX) > 50) { // Minimum swipe distance
+                if (diffX > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                prevSlide();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
             }
         });
 
