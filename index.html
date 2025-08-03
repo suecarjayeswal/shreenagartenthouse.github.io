@@ -5,943 +5,1390 @@
 <html class="no-js" lang="en"> <!--<![endif]-->
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sreenagar Events | Nepal's Premier Event Management Company</title>
+    <meta name="description" content="Sreenagar Events - Nepal's trusted event partner with 15+ years of experience. From weddings to corporate events, we make your moments grand.">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #d4382a;
+            --secondary-color: #ff6b35;
+            --accent-color: #ffd700;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.1);
+            --shadow-hover: 0 8px 25px rgba(0,0,0,0.15);
+        }
 
-	<!--- basic page needs
-   ================================================== -->
-	<meta charset="utf-8">
-	<title>Kreo</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-	<!-- mobile specific metas
-   ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
 
-	<!-- CSS
-   ================================================== -->
-	<link rel="stylesheet" href="css/base.css">
-	<link rel="stylesheet" href="css/vendor.min.css">
-	<link rel="stylesheet" href="css/main.css">
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-	<!-- script
-   ================================================== -->
-	<script src="js/modernizr.js"></script>
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
 
-	<!-- favicons
-	================================================== -->
-	<link rel="shortcut icon" href="favicon.png">
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="1" fill="white" opacity="0.1"/><circle cx="10" cy="90" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: var(--text-dark);
+        }
+
+        .btn-primary:hover {
+            background: #ffed4e;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 3px;
+            background: var(--primary-color);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* About Section */
+        .about {
+            background: var(--bg-light);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .about-text h3 {
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .service-card ul {
+            list-style: none;
+            color: var(--text-light);
+        }
+
+        .service-card li {
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Packages Section */
+        .packages {
+            background: var(--bg-light);
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .package-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .package-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .package-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .package-subtitle {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .package-content {
+            padding: 2rem;
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .package-features li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .package-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 4/3;
+            background: var(--bg-light);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-item::after {
+            content: '📸';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            z-index: 2;
+        }
+
+        .gallery-categories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 0.5rem 1.5rem;
+            background: var(--white);
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: var(--bg-light);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--primary-color);
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-family: serif;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .testimonial-location {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            space-y: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 120px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--accent-color);
+            color: var(--text-dark);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #34495e;
+            padding-top: 1rem;
+            text-align: center;
+            color: #bdc3c7;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: var(--white);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: var(--shadow);
+                padding: 2rem 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .packages-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero {
+                padding: 100px 0 60px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-
-	<!-- header
-   ================================================== -->
-	<header id="main-header">
-
-		<div class="row">
-
-			<div class="logo">
-				<a href="index.html">Shreenagar Tent House</a>
-			</div>
-
-			<nav id="nav-wrap">
-				<a class="mobile-btn" href="#nav-wrap" title="Show navigation">
-					<span class="menu-icon">Menu</span>
-				</a>
-				<a class="mobile-btn" href="#" title="Hide navigation">
-					<span class="menu-icon">Menu</span>
-				</a>
-
-				<ul id="nav" class="nav">
-					<li class="current"><a class="smoothscroll" href="#hero">Home.</a></li>
-					<li><a class="smoothscroll" href="#portfolio">Gallery.</a></li>
-					<li><a class="smoothscroll" href="#services">Services.</a></li>
-					<li><a class="smoothscroll" href="#about">About.</a></li>
-					<li><a class="smoothscroll" href="#contact">Contact.</a></li>
-				</ul>
-			</nav>
-
-			<ul class="header-social">
-				<li>
-					<a href="https://www.facebook.com/shreenagar.tent.house" target="_blank">
-						<i class="fa fa-facebook"></i>
-					</a>
-				</li>
-				<!-- You can add more social links as needed -->
-			</ul>
-
-		</div>
-	</header>
-
-	<!-- homepage hero
-	================================================== -->
-	<section id="hero">
-		<div class="row hero-content">
-			<div class="twelve columns hero-container">
-				<!-- hero-slider start-->
-				<div id="hero-slider" class="flexslider">
-					<ul class="slides">
-
-						<!-- slide -->
-						<li>
-							<div class="flex-caption">
-								<h1>Welcome to <span>Shreenagar Tent House</span></h1>
-								<h3>
-									Bhairahawa’s trusted event management and rental service for over 15 years.<br>
-									From family celebrations to grand community events, we make every occasion
-									memorable.
-								</h3>
-							</div>
-						</li>
-
-						<!-- slide -->
-						<li>
-							<div class="flex-caption">
-								<h1>Expertise in Nepali Events</h1>
-								<h3>
-									We handle weddings, bratabanda, engagements, receptions, birthdays, Mahayagya, and
-									more—serving up to 1,500 guests with ease.
-								</h3>
-							</div>
-						</li>
-
-						<!-- slide -->
-						<li>
-							<div class="flex-caption">
-								<h1>
-									See our <a class="smoothscroll" href="#portfolio" title="Gallery">event gallery</a>
-									or
-									<a class="smoothscroll" href="#contact" title="Contact Us">contact us</a> to plan
-									your next event.
-								</h1>
-								<h3>
-									Reliable, experienced, and dedicated to making your event a success—every time.
-								</h3>
-							</div>
-						</li>
-					</ul>
-				</div> <!-- end hero-slider -->
-			</div> <!-- end twelve columns-->
-		</div> <!-- end row -->
-
-		<div id="more">
-			<a class="smoothscroll" href="#services">
-				More About Us <i class="fa fa-angle-down"></i>
-			</a>
-		</div>
-	</section>
-
-	<!-- portfolio
-   ================================================== -->
-	<section id="portfolio">
-
-		<div class="row section-head">
-			<div class="twelve columns">
-				<h1>Our Recent Events<span>.</span></h1>
-				<hr />
-				<p>
-					Discover some of the beautiful and memorable events we’ve managed across Nepal. From elegant
-					weddings to vibrant religious gatherings, Shreenagar Tent House brings your vision to life with
-					creativity and care.
-				</p>
-			</div>
-		</div> <!-- end section-head -->
-
-		<div class="row items">
-			<!-- portfolio-wrapper -->
-			<div id="portfolio-wrapper" class="bgrid-fourth s-bgrid-third tab-bgrid-half">
-
-				<div class="bgrid folio-item">
-					<div class="item-wrap">
-						<a href="#modal-01">
-							<img src="images/portfolio/underwater.jpg" alt="Wedding Reception">
-							<div class="overlay"></div>
-							<div class="portfolio-item-meta">
-								<h5>Grand Wedding Reception</h5>
-								<p>Elegant tent setup, floral décor, and lighting for a 1,000+ guest celebration.</p>
-							</div>
-							<div class="link-icon"><i class="fa fa-plus"></i></div>
-						</a>
-					</div>
-				</div> <!-- item end -->
-
-				<div class="bgrid folio-item">
-					<div class="item-wrap">
-						<a href="#modal-02">
-							<img src="images/portfolio/hotel.jpg" alt="Engagement Ceremony">
-							<div class="overlay">
-								<div class="portfolio-item-meta">
-									<h5>Engagement Ceremony</h5>
-									<p>Stylish stage, sound system, and seating for a memorable engagement.</p>
-								</div>
-							</div>
-							<div class="link-icon"><i class="fa fa-plus"></i></div>
-						</a>
-					</div>
-				</div> <!-- item end -->
-
-				<div class="bgrid folio-item">
-					<div class="item-wrap">
-						<a href="#modal-03">
-							<img src="images/portfolio/beetle.jpg" alt="Bratabanda Event">
-							<div class="overlay">
-								<div class="portfolio-item-meta">
-									<h5>Bratabanda Ritual</h5>
-									<p>Traditional setup for sacred ceremonies with full event support.</p>
-								</div>
-							</div>
-							<div class="link-icon"><i class="fa fa-plus"></i></div>
-						</a>
-					</div>
-				</div> <!-- item end -->
-
-				<div class="bgrid folio-item">
-					<div class="item-wrap">
-						<a href="#modal-04">
-							<img src="images/portfolio/banjo-player.jpg" alt="Birthday Party">
-							<div class="overlay">
-								<div class="portfolio-item-meta">
-									<h5>Birthday Party</h5>
-									<p>Colorful décor, fun activities, and catering for all ages.</p>
-								</div>
-							</div>
-							<div class="link-icon"><i class="fa fa-plus"></i></div>
-						</a>
-					</div>
-				</div> <!-- item end -->
-
-				<div class="bgrid folio-item">
-					<div class="item-wrap">
-						<a href="#modal-05">
-							<img src="images/portfolio/lighthouse.jpg" alt="Corporate Event">
-							<div class="overlay">
-								<div class="portfolio-item-meta">
-									<h5>Corporate Gathering</h5>
-									<p>Professional arrangements for meetings, launches, and celebrations.</p>
-								</div>
-							</div>
-							<div class="link-icon"><i class="fa fa-plus"></i></div>
-						</a>
-					</div>
-				</div> <!-- item end -->
-
-				<div class="bgrid folio-item">
-					<div class="item-wrap">
-						<a href="#modal-06">
-							<img src="images/portfolio/girl.jpg" alt="Mahayagya Event">
-							<div class="overlay">
-								<div class="portfolio-item-meta">
-									<h5>Mahayagya</h5>
-									<p>Large-scale religious event management with seating, sound, and hospitality.</p>
-								</div>
-							</div>
-							<div class="link-icon"><i class="fa fa-plus"></i></div>
-						</a>
-					</div>
-				</div> <!-- item end -->
-
-				<div class="bgrid folio-item">
-					<div class="item-wrap">
-						<a href="#modal-07">
-							<img src="images/portfolio/coffee.jpg" alt="Picnic Event">
-							<div class="overlay">
-								<div class="portfolio-item-meta">
-									<h5>Family Picnic</h5>
-									<p>Outdoor fun with tents, sound system, and games for everyone.</p>
-								</div>
-							</div>
-							<div class="link-icon"><i class="fa fa-plus"></i></div>
-						</a>
-					</div>
-				</div> <!-- item end -->
-
-				<div class="bgrid folio-item">
-					<div class="item-wrap">
-						<a href="#modal-08">
-							<img src="images/portfolio/judah.jpg" alt="Reception Party">
-							<div class="overlay">
-								<div class="portfolio-item-meta">
-									<h5>Reception Party</h5>
-									<p>Stylish evening event with lighting, music, and catering services.</p>
-								</div>
-							</div>
-							<div class="link-icon"><i class="fa fa-plus"></i></div>
-						</a>
-					</div>
-				</div> <!-- item end -->
-
-			</div> <!-- end portfolio-wrapper -->
-		</div>
-	</section>
-	<!-- modal popup
-========================================================= -->
-
-	<div id="modal-01" class="popup-modal mfp-hide">
-		<div class="media">
-			<img src="images/portfolio/modals/m-underwater.jpg" alt="Grand Wedding Reception" />
-		</div>
-		<div class="description-box">
-			<h4>Grand Wedding Reception</h4>
-			<p>
-				A stunning wedding reception for over 1,000 guests, featuring elegant tent décor, ambient lighting, and
-				seamless event management. Our team ensured every detail was perfect, from the floral arrangements to
-				the sound system.
-			</p>
-			<span class="categories">Wedding, Event Management</span>
-		</div>
-		<div class="link-box group">
-			<a href="#contact">Details</a>
-			<a href="#" class="popup-modal-dismiss">Close</a>
-		</div>
-	</div><!-- modal-01 end -->
-
-	<div id="modal-02" class="popup-modal mfp-hide">
-		<div class="media">
-			<img src="images/portfolio/modals/m-hotel.jpg" alt="Engagement Ceremony" />
-		</div>
-		<div class="description-box">
-			<h4>Engagement Ceremony</h4>
-			<p>
-				A memorable engagement event with a stylish stage, premium seating, and a vibrant atmosphere. We
-				provided full event setup, including décor, sound, and hospitality services.
-			</p>
-			<span class="categories">Engagement, Event Rental</span>
-		</div>
-		<div class="link-box">
-			<a href="#contact">Details</a>
-			<a href="#" class="popup-modal-dismiss">Close</a>
-		</div>
-	</div><!-- modal-02 end -->
-
-	<div id="modal-03" class="popup-modal mfp-hide">
-		<div class="media">
-			<img src="images/portfolio/modals/m-beetle.jpg" alt="Bratabanda Ritual" />
-		</div>
-		<div class="description-box">
-			<h4>Bratabanda Ritual</h4>
-			<p>
-				Traditional bratabanda ceremony setup with authentic décor and all necessary arrangements for a sacred
-				and smooth event. Our experience ensures cultural authenticity and guest comfort.
-			</p>
-			<span class="categories">Bratabanda, Religious Event</span>
-		</div>
-		<div class="link-box">
-			<a href="#contact">Details</a>
-			<a href="#" class="popup-modal-dismiss">Close</a>
-		</div>
-	</div><!-- modal-03 end -->
-
-	<div id="modal-04" class="popup-modal mfp-hide">
-		<div class="media">
-			<img src="images/portfolio/modals/m-banjo-player.jpg" alt="Birthday Party" />
-		</div>
-		<div class="description-box">
-			<h4>Birthday Party</h4>
-			<p>
-				A fun-filled birthday celebration with colorful tents, creative decorations, and engaging activities for
-				all ages. We handle everything so you can enjoy the special day stress-free.
-			</p>
-			<span class="categories">Birthday, Family Event</span>
-		</div>
-		<div class="link-box">
-			<a href="#contact">Details</a>
-			<a href="#" class="popup-modal-dismiss">Close</a>
-		</div>
-	</div><!-- modal-04 end -->
-
-	<div id="modal-05" class="popup-modal slider mfp-hide">
-		<div class="media">
-			<img src="images/portfolio/modals/m-lighthouse.jpg" alt="Corporate Gathering" />
-		</div>
-		<div class="description-box">
-			<h4>Corporate Gathering</h4>
-			<p>
-				Professional arrangements for business meetings, product launches, and corporate celebrations. Our team
-				delivers a polished experience with quality equipment and attentive service.
-			</p>
-			<div class="categories">Corporate Event</div>
-		</div>
-		<div class="link-box">
-			<a href="#contact">Details</a>
-			<a href="#" class="popup-modal-dismiss">Close</a>
-		</div>
-	</div><!-- modal-05 end -->
-
-	<div id="modal-06" class="popup-modal mfp-hide">
-		<div class="media">
-			<img src="images/portfolio/modals/m-girl.jpg" alt="Mahayagya Event" />
-		</div>
-		<div class="description-box">
-			<h4>Mahayagya</h4>
-			<p>
-				Large-scale religious event management, including tent setup, seating for hundreds, sound systems, and
-				hospitality for multi-day functions. We ensure every aspect is handled with care and respect.
-			</p>
-			<div class="categories">Religious Event, Mahayagya</div>
-		</div>
-		<div class="link-box">
-			<a href="#contact">Details</a>
-			<a href="#" class="popup-modal-dismiss">Close</a>
-		</div>
-	</div><!-- modal-06 end -->
-
-	<div id="modal-07" class="popup-modal mfp-hide">
-		<div class="media">
-			<img src="images/portfolio/modals/m-coffee.jpg" alt="Family Picnic" />
-		</div>
-		<div class="description-box">
-			<h4>Family Picnic</h4>
-			<p>
-				Outdoor fun with robust tenting, sound system rental, and games for a perfect family picnic. We provide
-				everything you need for a relaxing and enjoyable day out.
-			</p>
-			<div class="categories">Picnic, Outdoor Event</div>
-		</div>
-		<div class="link-box">
-			<a href="#contact">Details</a>
-			<a href="#" class="popup-modal-dismiss">Close</a>
-		</div>
-	</div><!-- modal-07 end -->
-
-	<div id="modal-08" class="popup-modal mfp-hide">
-		<div class="media">
-			<img src="images/portfolio/modals/m-judah.jpg" alt="Reception Party" />
-		</div>
-		<div class="description-box">
-			<h4>Reception Party</h4>
-			<p>
-				A stylish evening event with beautiful lighting, music, and catering. Our team ensures your reception is
-				seamless, elegant, and unforgettable.
-			</p>
-			<div class="categories">Reception, Evening Event</div>
-		</div>
-		<div class="link-box">
-			<a href="#contact">Details</a>
-			<a href="#" class="popup-modal-dismiss">Close</a>
-		</div>
-	</div><!-- modal-08 end -->
-
-
-
-	<!-- Services Section
-   ================================================== -->
-	<section id="services">
-
-		<div class="row section-head">
-			<div class="twelve columns">
-				<h1>Our Event Services<span>.</span></h1>
-				<hr />
-				<p>
-					With over 15 years of experience, Shreenagar Tent House offers a complete range of event management
-					and rental services in Bhairahawa and across Nepal. Whether you are planning an intimate family
-					function or a grand celebration, our team ensures every detail is handled with care and
-					professionalism.
-				</p>
-			</div>
-		</div> <!-- end section-head -->
-
-		<div class="row mobile-no-padding">
-			<div class="service-list bgrid-third s-bgrid-half tab-bgrid-whole group">
-
-				<div class="bgrid">
-					<h3>Event Planning & Coordination</h3>
-					<div class="service-content">
-						<p>
-							From weddings and bratabanda to birthdays and corporate events, we provide end-to-end
-							planning, vendor management, and on-site coordination for a seamless experience.
-						</p>
-					</div>
-				</div> <!-- end bgrid -->
-
-				<div class="bgrid">
-					<h3>Tent & Canopy Rentals</h3>
-					<div class="service-content">
-						<p>
-							High-quality tents, canopies, and marquees for all event sizes and styles. Our setups are
-							sturdy, weather-resistant, and beautifully decorated to match your theme.
-						</p>
-					</div>
-				</div> <!-- end bgrid -->
-
-				<div class="bgrid">
-					<h3>Stage, Lighting & Sound</h3>
-					<div class="service-content">
-						<p>
-							Professional stage design, vibrant lighting, and crystal-clear sound systems for ceremonies,
-							performances, and speeches. We ensure your event looks and sounds spectacular.
-						</p>
-					</div>
-				</div> <!-- end bgrid -->
-
-				<div class="bgrid">
-					<h3>Event Décor & Theming</h3>
-					<div class="service-content">
-						<p>
-							Customized décor solutions including floral arrangements, draping, centerpieces, and themed
-							props to transform your venue into a memorable setting.
-						</p>
-					</div>
-				</div> <!-- end bgrid -->
-
-				<div class="bgrid">
-					<h3>Catering & Hospitality</h3>
-					<div class="service-content">
-						<p>
-							Delicious catering options and trained service staff to delight your guests. We handle
-							everything from snacks to full-course meals for any occasion.
-						</p>
-					</div>
-				</div> <!-- end bgrid -->
-
-				<div class="bgrid">
-					<h3>Furniture & Equipment Rental</h3>
-					<div class="service-content">
-						<p>
-							Comfortable chairs, tables, sofas, and essential event equipment available for rent. Our
-							inventory suits both small gatherings and large festivals.
-						</p>
-					</div>
-				</div> <!-- end bgrid -->
-
-			</div> <!-- end service-list -->
-		</div> <!-- end row -->
-
-	</section> <!-- end services -->
-
-
-
-	<!-- About Section
-   ================================================== -->
-	<section id="about">
-
-		<div class="row section-head">
-
-			<div class="twelve columns">
-
-				<h1>Who Are We<span>.</span></h1>
-
-				<hr />
-
-				<p>
-					Shreenagar Tent House is a premier event management and rental service provider based in Bhairahawa,
-					Nepal. With over 15 years of experience, we specialize in organizing a wide range of Nepali events
-					including weddings, bratabanda, engagements, receptions, birthdays, and large religious gatherings
-					like Mahayagya. Our commitment to quality, reliability, and personalized service has made us a
-					trusted partner for clients across Nepal.
-				</p>
-
-			</div> <!-- end section-head -->
-
-		</div>
-
-		<div class="row mobile-no-padding">
-
-			<div class="process bgrid-half tab-bgrid-whole group">
-
-				<div class="bgrid">
-
-					<h3>Our Process.</h3>
-					<p>
-						We begin by understanding your vision and requirements, followed by meticulous planning and
-						coordination. Our team manages every detail from vendor selection to on-site execution, ensuring
-						a seamless and memorable event.
-					</p>
-				</div>
-
-				<div class="bgrid">
-
-					<h3>Our Approach.</h3>
-					<p>
-						We believe in personalized service, cultural sensitivity, and attention to detail. Our approach
-						combines traditional Nepali event customs with modern event management techniques to deliver
-						exceptional experiences.
-					</p>
-				</div>
-
-				<div class="bgrid">
-
-					<h3>Our Goal.</h3>
-					<p>
-						Our goal is to make every event unique and unforgettable, providing professional support that
-						allows our clients to enjoy their special occasions without stress.
-					</p>
-				</div>
-
-				<div class="bgrid">
-
-					<h3>Our Mission.</h3>
-					<p>
-						To be the leading event management and rental service in Nepal, known for excellence,
-						reliability, and heartfelt service.
-					</p>
-				</div>
-
-			</div> <!-- end process -->
-
-		</div> <!-- end row -->
-
-
-		<div class="row team section-head">
-
-			<div class="twelve columns">
-
-				<h1>Meet Our Team<span>.</span></h1>
-
-				<hr />
-
-			</div>
-
-		</div> <!-- end section-head -->
-
-		<div class="row">
-
-			<div id="team-wrapper" class="bgrid-fourth s-bgrid-third tab-bgrid-half mob-bgrid-whole group">
-
-				<div class="bgrid member">
-
-					<div class="member-pic">
-						<img src="images/team/member01-k.jpg" alt="Owner - Ram Bahadur" />
-						<div class="mask"></div>
-					</div>
-					<div class="member-name">
-						<h3>Ram Bahadur</h3>
-						<span>Owner & Founder</span>
-					</div>
-
-					<p>
-						Ram Bahadur has over 15 years of experience in event management and is the visionary behind
-						Shreenagar Tent House. His dedication to quality and client satisfaction drives the company’s
-						success.
-					</p>
-
-					<ul class="member-social">
-						<li><a href="https://www.facebook.com/shreenagar.tent.house" target="_blank"><i
-									class="fa fa-facebook"></i></a></li>
-					</ul>
-
-				</div> <!-- end member -->
-
-				<div class="bgrid member">
-
-					<div class="member-pic">
-						<img src="images/team/member02-k.jpg" alt="Event Manager - Sita Devi" />
-						<div class="mask"></div>
-					</div>
-					<div class="member-name">
-						<h3>Sita Devi</h3>
-						<span>Event Manager</span>
-					</div>
-
-					<p>
-						Sita Devi coordinates all event logistics and client communications, ensuring smooth execution
-						and attention to detail for every occasion.
-					</p>
-
-					<ul class="member-social">
-						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-					</ul>
-
-				</div> <!-- end member -->
-
-				<div class="bgrid member">
-
-					<div class="member-pic">
-						<img src="images/team/member03-k.jpg" alt="Lead Coordinator - Ram Kumar" />
-						<div class="mask"></div>
-					</div>
-					<div class="member-name">
-						<h3>Ram Kumar</h3>
-						<span>Lead Coordinator</span>
-					</div>
-
-					<p>
-						Ram Kumar oversees event setups and vendor management, bringing years of experience to ensure
-						flawless event delivery.
-					</p>
-
-					<ul class="member-social">
-						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-					</ul>
-
-				</div> <!-- end member -->
-
-				<div class="bgrid member">
-
-					<div class="member-pic">
-						<img src="images/team/member04-k.jpg" alt="Logistics Head - Maya Shrestha" />
-						<div class="mask"></div>
-					</div>
-					<div class="member-name">
-						<h3>Maya Shrestha</h3>
-						<span>Logistics Head</span>
-					</div>
-
-					<p>
-						Maya Shrestha manages all logistics and equipment rentals, ensuring timely delivery and setup
-						for every event.
-					</p>
-
-					<ul class="member-social">
-						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-					</ul>
-
-				</div> <!-- end member -->
-
-			</div> <!-- end team-wrapper -->
-
-		</div> <!-- end row -->
-
-		<div id="call-to-action">
-
-			<div class="row section-ads">
-
-				<div class="twelve columns">
-
-					<h2><a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Styleshout Recommends
-							Dreamhost<span>.</span></a></h2>
-
-					<p>
-						Looking for an awesome and reliable webhosting? Try <a
-							href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT"><span>DreamHost</span></a>.
-						Get <span>$50 off</span> when you sign up with the promocode <span>styleshout</span>.
-					</p>
-
-					<div class="action">
-						<a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Sign Up Now</a>
-					</div>
-
-				</div>
-
-			</div> <!-- end section-ads -->
-
-		</div> <!-- end call-to-action -->
-
-	</section> <!-- end about -->
-
-
-	<!-- Testimonials Section
-   ================================================== -->
-	<section id="testimonials">
-
-		<div class="row content flex-container">
-
-			<div id="testimonial-slider" class="flexslider">
-
-				<ul class="slides">
-					<li>
-						<p>
-							Shreenagar Tent House made our wedding day absolutely perfect! The decorations were
-							beautiful and the team handled everything so smoothly. Our guests were truly impressed.
-							Thank you for making our special day stress-free and memorable!
-						</p>
-						<div class="testimonial-author">
-							<img src="images/avatars/avatar-1.jpg" alt="Author image">
-							<div class="author-info">
-								Sita Sharma
-								<span class="position">Bride, Bhairahawa</span>
-							</div>
-						</div>
-					</li> <!-- end slide -->
-
-					<li>
-						<p>
-							We have worked with Shreenagar Tent House for several family events and every time they
-							exceed our expectations. Their attention to detail and professionalism is unmatched in
-							Bhairahawa. Highly recommended for any event!
-						</p>
-						<div class="testimonial-author">
-							<img src="images/avatars/avatar-2.jpg" alt="Author image">
-							<div class="author-info">
-								Rajesh Thapa
-								<span>Family Event Host</span>
-							</div>
-						</div>
-					</li> <!-- end slide -->
-
-					<li>
-						<p>
-							Our Mahayagya event was a huge success thanks to the excellent arrangements by Shreenagar
-							Tent House. They managed everything from tents to sound systems for hundreds of guests, and
-							the service was outstanding.
-						</p>
-						<div class="testimonial-author">
-							<img src="images/avatars/avatar-3.jpg" alt="Author image">
-							<div class="author-info">
-								Sunil Shrestha
-								<span>Event Organizer, Rupandehi</span>
-							</div>
-						</div>
-					</li> <!-- end slide -->
-
-				</ul> <!-- end slides -->
-
-			</div> <!-- end flexslider -->
-
-		</div> <!-- end row -->
-
-	</section> <!-- end testimonials section -->
-
-
-	<!-- contact
-   ================================================== -->
-	<section id="contact">
-
-		<div class="row section-head">
-			<div class="twelve columns">
-				<h1>Get In Touch With Us<span>.</span></h1>
-				<hr />
-			</div>
-		</div> <!-- end section-head -->
-
-		<div class="row">
-
-			<div id="contact-form" class="six columns tab-whole left">
-
-				<!-- form -->
-				<form name="contactForm" id="contactForm" method="post" action="">
-					<fieldset>
-						<div class="group">
-							<input name="contactName" type="text" id="contactName" placeholder="Name" minLength="2"
-								required />
-						</div>
-						<div>
-							<input name="contactEmail" type="email" id="contactEmail" placeholder="Email" required />
-						</div>
-						<div>
-							<input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" />
-						</div>
-						<div>
-							<textarea name="contactMessage" id="contactMessage" placeholder="Message" rows="10"
-								cols="50" required></textarea>
-						</div>
-						<div>
-							<button class="submitform">Submit</button>
-							<div id="submit-loader">
-								<div class="text-loader">Sending...</div>
-								<div class="s-loader">
-									<div class="bounce1"></div>
-									<div class="bounce2"></div>
-									<div class="bounce3"></div>
-								</div>
-							</div>
-						</div>
-					</fieldset>
-				</form> <!-- Form End -->
-
-				<!-- contact-warning -->
-				<div id="message-warning"></div>
-				<!-- contact-success -->
-				<div id="message-success">
-					<i class="icon-ok"></i>Your message was sent, thank you!<br />
-				</div>
-
-			</div>
-
-			<div class="six columns tab-whole right">
-
-				<p class="lead">
-					Have a question or want to book us for your next event? Reach out to Shreenagar Tent House and our
-					team will be happy to assist you with all your event management and rental needs.
-				</p>
-
-				<h3 class="address">Come Visit</h3>
-				<p>
-					Shreenagar Tent House<br>
-					Buddha Road, Bhairahawa<br>
-					Rupandehi, Nepal
-				</p>
-
-				<h3>Contact Numbers:</h3>
-				<p>
-					Mobile/WhatsApp: +977 9857012152<br>
-					<!-- Add more numbers if needed -->
-				</p>
-
-				<h3>Email:</h3>
-				<p>
-					<a href="mailto:shreenagartenthouse@gmail.com">shreenagartenthouse@gmail.com</a>
-				</p>
-
-				<h3>Follow Us:</h3>
-				<p>
-					<a href="https://www.facebook.com/shreenagar.tent.house" target="_blank">
-						<i class="fa fa-facebook"></i> Facebook
-					</a>
-				</p>
-
-			</div>
-
-		</div> <!-- end row -->
-
-	</section> <!-- end contact -->
-
-
-
-	<!-- Footer
-   ================================================== -->
-	<footer>
-		<div class="row">
-
-			<div class="twelve columns content group">
-
-				<ul class="social-links">
-					<li>
-						<a href="https://www.facebook.com/shreenagar.tent.house" target="_blank">
-							<i class="fa fa-facebook-square"></i>
-						</a>
-					</li>
-					<!-- Add more social links as you create them -->
-				</ul>
-
-				<hr />
-
-				<div class="info">
-
-					<div class="footer-logo">
-						<strong>Shreenagar Tent House</strong>
-					</div>
-
-					<p>
-						Shreenagar Tent House is Bhairahawa’s trusted event management and rental partner, serving Nepal
-						for over 15 years. From intimate gatherings to grand celebrations, we deliver seamless events
-						and unforgettable memories.
-					</p>
-
-				</div>
-
-			</div>
-
-			<ul class="copyright">
-				<li>&copy; 2025 Shreenagar Tent House. All rights reserved.</li>
-				<li>Website by <a href="https://www.facebook.com/shreenagar.tent.house" target="_blank">Shreenagar Tent
-						House</a>.</li>
-			</ul>
-
-			<div id="go-top">
-				<a class="smoothscroll" title="Back to Top" href="#hero">Back to Top<i class="fa fa-angle-up"></i></a>
-			</div>
-
-		</div> <!-- end row -->
-
-	</footer> <!-- end footer -->
-
-	<div id="preloader">
-		<div id="loader"></div>
-	</div>
-
-	<!-- Java Script
-   ================================================== -->
-	<script src="js/jquery-1.11.3.min.js"></script>
-	<script src="js/jquery-migrate-1.2.1.min.js"></script>
-	<script src="js/jquery.flexslider-min.js"></script>
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/jquery.validate.min.js"></script>
-	<script src="js/jquery.fittext.js"></script>
-	<script src="js/jquery.placeholder.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/main.js"></script>
-
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">Sreenagar Events</div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#packages" class="nav-link">Packages</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Nepal's Moments, Made Grand.</h1>
+                <p class="hero-subtitle">From weddings and bratabanda to product launches and mega festivals—Sreenagar Events is your trusted event partner with 15+ years of experience across Nepal.</p>
+                <div class="cta-buttons">
+                    <a href="#packages" class="btn btn-primary">
+                        <i class="fas fa-gift"></i>
+                        Explore Packages
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-calendar-alt"></i>
+                        Book Free Consultation
+                    </a>
+                    <a href="tel:+977-98XXXXXXXX" class="btn btn-secondary">
+                        <i class="fas fa-phone"></i>
+                        Call Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <h2 class="section-title">🧭 Who We Are</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Sreenagar Events</h3>
+                    <p><strong>Sreenagar Events</strong> is a full-service event management and rental service provider based in <strong>Bhairahawa</strong>, Nepal. Formerly known as <em>Shreenagar Tent House</em>, we have over <strong>15 years</strong> of expertise in organizing a diverse range of Nepali events, from intimate family functions to large-scale celebrations with over 1,500 guests.</p>
+                    
+                    <p>Whether you're planning a grand wedding, bratabanda, birthday bash, religious ceremony, corporate event, or even a product launch—our dedicated team brings your vision to life with precision, passion, and creativity.</p>
+                    
+                    <p>We blend <strong>traditional Nepali elements</strong> with <strong>modern event solutions</strong> to deliver seamless, beautiful, and unforgettable experiences.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">1500+</div>
+                        <div class="stat-label">Max Guests Capacity</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Events Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 4rem; text-align: center;">
+                <h3 style="color: var(--primary-color); margin-bottom: 2rem;">🎯 Our Mission & Vision</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div style="background: var(--white); padding: 2rem; border-radius: 15px; box-shadow: var(--shadow);">
+                        <h4 style="color: var(--text-dark); margin-bottom: 1rem;">Mission</h4>
+                        <p>To create meaningful, well-executed, and stress-free celebrations tailored to our clients' needs, reflecting the beauty of Nepali culture and hospitality.</p>
+                    </div>
+                    <div style="background: var(--white); padding: 2rem; border-radius: 15px; box-shadow: var(--shadow);">
+                        <h4 style="color: var(--text-dark); margin-bottom: 1rem;">Vision</h4>
+                        <p>To be Nepal's most reliable and innovative event brand, known for excellence in service, creativity, and customer satisfaction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="container">
+            <h2 class="section-title">🛠️ What We Offer</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: var(--text-light); font-size: 1.1rem;">We offer end-to-end event management services including planning, logistics, rentals, décor, food, and entertainment.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎪</div>
+                    <h3>Tent & Infrastructure</h3>
+                    <ul>
+                        <li>Elegant tent installations for all sizes</li>
+                        <li>Covered dining areas</li>
+                        <li>Waterproof canopies</li>
+                        <li>Entry gates and stage setup</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Decoration & Themes</h3>
+                    <ul>
+                        <li>Floral décor (traditional and modern)</li>
+                        <li>Themed décor (royal, cultural, contemporary)</li>
+                        <li>Entrance torans, mandaps, stages</li>
+                        <li>Welcome signage and photo booths</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🍛</div>
+                    <h3>Catering Services</h3>
+                    <ul>
+                        <li>Regional Nepali menus (Thakali, Newari, Madhesi)</li>
+                        <li>Vegetarian, Non-Vegetarian, Custom Buffets</li>
+                        <li>Sweet counters and dessert stalls</li>
+                        <li>Live food counters (chat, momo, BBQ)</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🎤</div>
+                    <h3>Sound & Lighting</h3>
+                    <ul>
+                        <li>Full-range sound systems</li>
+                        <li>DJ and background music</li>
+                        <li>LED lighting, fairy lights, spotlights</li>
+                        <li>Generator support for off-grid venues</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🍸</div>
+                    <h3>Mocktail & Cocktail Counters</h3>
+                    <ul>
+                        <li>Themed drink stations</li>
+                        <li>Fruit punches, mocktails, cocktails</li>
+                        <li>Professional bartenders</li>
+                        <li>Custom beverage menus</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🛋️</div>
+                    <h3>Lounge & VIP Areas</h3>
+                    <ul>
+                        <li>Lounge-style guest seating</li>
+                        <li>Sofa sets, cushions, carpet arrangements</li>
+                        <li>Bride & groom prep rooms</li>
+                        <li>VIP changing rooms</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🧸</div>
+                    <h3>Kids & Entertainment</h3>
+                    <ul>
+                        <li>Cartoon mascots (Mickey, Doraemon, etc.)</li>
+                        <li>Bouncy castles, game stalls</li>
+                        <li>Kids snack & gift counters</li>
+                        <li>Entertainment activities</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🎭</div>
+                    <h3>Extra Services</h3>
+                    <ul>
+                        <li>Event photography & videography</li>
+                        <li>Cultural performances & traditional dance</li>
+                        <li>Anchors/Emcees & Live bands</li>
+                        <li>Welcome girls, ushers & custom giveaways</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="section packages" id="packages">
+        <div class="container">
+            <h2 class="section-title">🎁 Our Popular Packages</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: var(--text-light); font-size: 1.1rem;">All packages are customizable based on your guest count, event type, and preferences.</p>
+            
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3 class="package-title">🥳 Starter Celebration</h3>
+                        <p class="package-subtitle">Ideal for birthdays, bratabanda, small family gatherings (Up to 50 guests)</p>
+                    </div>
+                    <div class="package-content">
+                        <ul class="package-features">
+                            <li>Basic tent and seating setup</li>
+                            <li>Simple themed decoration</li>
+                            <li>Sound system with 2 mics</li>
+                            <li>Buffet setup with essential counters</li>
+                            <li>1 cartoon mascot</li>
+                            <li>On-site coordinator</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary" style="width: 100%; justify-content: center;">Get Quote</a>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3 class="package-title">💍 Classic Wedding</h3>
+                        <p class="package-subtitle">Perfect for traditional weddings, receptions, and engagements (Up to 300 guests)</p>
+                    </div>
+                    <div class="package-content">
+                        <ul class="package-features">
+                            <li>Grand tent with entrance arch and stage décor</li>
+                            <li>Floral and cultural decoration</li>
+                            <li>DJ + LED lighting setup</li>
+                            <li>VIP lounge seating</li>
+                            <li>Buffet dining (multi-course)</li>
+                            <li>2 cartoon mascots + themed photo booth</li>
+                            <li>On-site event manager + 4 staff</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary" style="width: 100%; justify-content: center;">Get Quote</a>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3 class="package-title">🔱 Religious & Community</h3>
+                        <p class="package-subtitle">For Mahayagya, pujas, school/college events (Up to 500–1000 attendees)</p>
+                    </div>
+                    <div class="package-content">
+                        <ul class="package-features">
+                            <li>Tent, stage, and ceremonial setup</li>
+                            <li>Traditional decoration (kalash, toran, etc.)</li>
+                            <li>Sound system for speeches & chants</li>
+                            <li>Basic food court setup (snacks/tea + meal)</li>
+                            <li>Seating for large audience</li>
+                            <li>Lighting and signage</li>
+                            <li>On-site supervisor team</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary" style="width: 100%; justify-content: center;">Get Quote</a>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3 class="package-title">🎉 Premium Mega Event</h3>
+                        <p class="package-subtitle">Luxury weddings, corporate galas, public festivals (Up to 1500+ guests)</p>
+                    </div>
+                    <div class="package-content">
+                        <ul class="package-features">
+                            <li>Multi-zone tent layout + VIP green room</li>
+                            <li>Designer décor + LED backdrop</li>
+                            <li>High-end sound & lighting system</li>
+                            <li>Lounge seating + Cocktail/mocktail bar</li>
+                            <li>Live entertainment (dance/music)</li>
+                            <li>Custom menu & buffet setup</li>
+                            <li>Event planner + 10 supporting staff</li>
+                            <li>Full logistics management</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary" style="width: 100%; justify-content: center;">Get Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">📸 Moments We've Created</h2>
+            
+            <div class="gallery-categories">
+                <button class="category-btn active">All</button>
+                <button class="category-btn">Weddings</button>
+                <button class="category-btn">Bratabanda</button>
+                <button class="category-btn">Birthdays</button>
+                <button class="category-btn">Corporate</button>
+                <button class="category-btn">Religious</button>
+                <button class="category-btn">Décor</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="weddings">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; z-index: 3;">
+                        <h4>Wedding Celebrations</h4>
+                        <p>Grand wedding setups</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="bratabanda">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; z-index: 3;">
+                        <h4>Bratabanda Ceremonies</h4>
+                        <p>Traditional ceremonies</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="birthdays">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; z-index: 3;">
+                        <h4>Birthday Parties</h4>
+                        <p>Fun celebrations</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="corporate">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; z-index: 3;">
+                        <h4>Corporate Events</h4>
+                        <p>Professional gatherings</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="religious">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; z-index: 3;">
+                        <h4>Religious Events</h4>
+                        <p>Sacred ceremonies</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="decor">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; z-index: 3;">
+                        <h4>Décor Showcase</h4>
+                        <p>Beautiful decorations</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="weddings">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; z-index: 3;">
+                        <h4>Food & Catering</h4>
+                        <p>Delicious spreads</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="birthdays">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; z-index: 3;">
+                        <h4>Mascot Moments</h4>
+                        <p>Kids entertainment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">💬 What Our Clients Say</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Sreenagar Events managed my sister's wedding with such grace and detail. The decoration and food were absolutely beautiful!</p>
+                    <div class="testimonial-author">Rina Pandey</div>
+                    <div class="testimonial-location">Bhairahawa</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">They handled a religious ceremony for 1,000+ people effortlessly. Very impressed with their organization and attention to detail!</p>
+                    <div class="testimonial-author">Mohan Ghimire</div>
+                    <div class="testimonial-location">Butwal</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">From tents to cocktails, they took care of everything for our product launch. Professional service and will definitely work with them again.</p>
+                    <div class="testimonial-author">CEO, Local Startup</div>
+                    <div class="testimonial-location">Bhairahawa</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">📞 Let's Plan Together!</h2>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Call Us Today</h4>
+                            <p>📱 +977-98XXXXXXXX</p>
+                            <p>☎️ 071-XXXXXX</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>📧 sreenagarevents@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Visit Us</h4>
+                            <p>📍 Bhairahawa, Nepal</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>🕒 Sunday–Friday: 9 AM – 7 PM</p>
+                            <p>📅 Saturday: On-call bookings only</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--text-dark);">Quick Contact Form</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="eventType">Type of Event *</label>
+                            <select id="eventType" name="eventType" required>
+                                <option value="">Select Event Type</option>
+                                <option value="wedding">Wedding</option>
+                                <option value="bratabanda">Bratabanda</option>
+                                <option value="birthday">Birthday Party</option>
+                                <option value="corporate">Corporate Event</option>
+                                <option value="religious">Religious Ceremony</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="eventDate">Event Date</label>
+                            <input type="date" id="eventDate" name="eventDate">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="guests">Number of Guests</label>
+                            <input type="number" id="guests" name="guests" placeholder="Approximate number">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your event requirements..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sreenagar Events</h3>
+                    <p>Nepal's trusted event partner with 15+ years of experience. Making your moments grand with traditional Nepali elements and modern event solutions.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#packages">Packages</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#services">Tent & Infrastructure</a></li>
+                        <li><a href="#services">Decoration & Themes</a></li>
+                        <li><a href="#services">Catering Services</a></li>
+                        <li><a href="#services">Sound & Lighting</a></li>
+                        <li><a href="#services">Entertainment</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>📍 Bhairahawa, Nepal</li>
+                        <li>📱 +977-98XXXXXXXX</li>
+                        <li>📧 sreenagarevents@gmail.com</li>
+                        <li>🕒 Sun-Fri: 9 AM – 7 PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sreenagar Events. All Rights Reserved. | <a href="#" style="color: var(--accent-color);">Privacy Policy</a> | <a href="#" style="color: var(--accent-color);">Terms & Conditions</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Gallery category filtering
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const category = btn.textContent.toLowerCase().replace(' ', '');
+
+                galleryItems.forEach(item => {
+                    if (category === 'all' || item.dataset.category === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Contact form submission
+        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic form validation
+            const fullName = document.getElementById('fullName').value;
+            const phone = document.getElementById('phone').value;
+            const eventType = document.getElementById('eventType').value;
+
+            if (!fullName || !phone || !eventType) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            // In a real application, you would send this data to a server
+            alert('Thank you for your inquiry! We will contact you soon.');
+            this.reset();
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all service cards, package cards, and testimonial cards
+        document.querySelectorAll('.service-card, .package-card, .testimonial-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
 </body>
 
 </html>
