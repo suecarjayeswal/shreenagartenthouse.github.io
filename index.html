@@ -247,7 +247,7 @@
             height: 4px;
             background: linear-gradient(90deg, transparent, var(--festival-gold), var(--silk-red), var(--festival-gold), transparent);
             margin: 2rem 0;
-            border-radius: 2px;
+            border-radius: 2px; 
         }
 
         /* Image Carousel Section */
@@ -291,7 +291,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
+            display: block; 
         }
 
         .carousel-overlay {
@@ -302,7 +302,7 @@
             background: linear-gradient(transparent, rgba(0,0,0,0.8));
             color: var(--pure-white);
             padding: 3rem 2rem 2rem;
-            text-align: center;
+            text-align: center; 
         }
 
         .carousel-overlay h3 {
@@ -428,13 +428,13 @@
             position: relative;
         }
 
-        .overview::before {
+        .overview::before { 
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
+            bottom: 0; 
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="texture" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M0,25 Q25,0 50,25 Q75,50 100,25" stroke="%23A31621" stroke-width="0.2" fill="none" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23texture)"/></svg>');
             opacity: 0.3;
         }
@@ -594,7 +594,7 @@
             font-size: 2.5rem;
             margin-bottom: 1rem;
         }
-
+ 
         .cta-section p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
@@ -812,7 +812,7 @@
                 font-size: 1.8rem;
  
             }
-
+ 
             /* Carousel mobile */
             .carousel-wrapper {
                 height: 250px;
@@ -841,6 +841,7 @@
             .gallery-cta p {
                 font-size: 1rem;
             }
+ 
         }
     </style>
 </head> 
@@ -887,7 +888,7 @@
                         Call Now
                     </a>
                 </div>
- 
+  
                     </div>
     </div>
     </section>
@@ -965,7 +966,7 @@
             </div>
         </div>
     </section>
-
+ 
     <!-- Quick Overview Section -->
     <section class="overview">
         <div class="container">
@@ -1178,7 +1179,7 @@
             } else {
                 navbar.style.background = 'rgba(255, 255, 255, 0.95)';
                 navbar.style.boxShadow = '0 4px 15px rgba(163, 22, 33, 0.1)'; 
-            }
+           }
         });
 
         // Image Carousel functionality
@@ -1266,6 +1267,7 @@
                 prevSlide();
             } else if (e.key === 'ArrowRight') {
                 nextSlide();
+ 
             }
         });
 
