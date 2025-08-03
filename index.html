@@ -1,287 +1,947 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Shreenagar Tent House | Event Management</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
-        }
 
-        h1, h2, h3 {
-            font-family: 'Georgia', serif;
-        }
+	<!--- basic page needs
+   ================================================== -->
+	<meta charset="utf-8">
+	<title>Kreo</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+	<!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-        /* Navbar Styles */
-        nav {
-            background-color: #d9371f; /* Red color inspired by Nepali events */
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #fff;
-        }
+	<!-- CSS
+   ================================================== -->
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/vendor.min.css">
+	<link rel="stylesheet" href="css/main.css">
 
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
+	<!-- script
+   ================================================== -->
+	<script src="js/modernizr.js"></script>
 
-        nav ul li {
-            margin-right: 20px;
-        }
+	<!-- favicons
+	================================================== -->
+	<link rel="shortcut icon" href="favicon.png">
 
-        nav ul li:last-child {
-            margin-right: 0;
-        }
-
-        nav ul li a {
-            font-size: 18px;
-            color: white;
-            text-transform: uppercase;
-        }
-
-        nav ul li a:hover {
-            color: #ffcc00; /* Golden yellow */
-        }
-
-        /* Hero Section */
-        .hero {
-            background-color: #d9371f;
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3em;
-            font-weight: bold;
-        }
-
-        .hero p {
-            font-size: 1.3em;
-            margin-top: 10px;
-        }
-
-        /* Section Styles */
-        section {
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        section h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #d9371f;
-        }
-
-        section p {
-            font-size: 1.1em;
-            color: #555;
-            max-width: 800px;
-            margin: 0 auto 30px;
-        }
-
-        /* Services */
-        .services .service-box {
-            display: inline-block;
-            width: 250px;
-            margin: 10px;
-            padding: 20px;
-            background-color: #f7f7f7;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .services .service-box:hover {
-            transform: translateY(-10px);
-        }
-
-        .services img {
-            width: 100%;
-            border-radius: 5px;
-        }
-
-        .services .service-box h3 {
-            color: #d9371f;
-            margin-top: 15px;
-            font-size: 1.5em;
-        }
-
-        /* Gallery */
-        .gallery img {
-            width: 100%;
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            background-color: #f8f9fa;
-            padding: 40px 20px;
-        }
-
-        .testimonials .testimonial-item {
-            display: inline-block;
-            width: 30%;
-            margin: 15px;
-            text-align: center;
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .testimonials .testimonial-item p {
-            font-size: 1.1em;
-            color: #777;
-        }
-
-        .testimonials .testimonial-item h4 {
-            color: #d9371f;
-            margin-top: 15px;
-            font-size: 1.2em;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #d9371f;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        footer p {
-            font-size: 1em;
-        }
-
-        footer a {
-            color: #ffcc00;
-            font-weight: bold;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .services .service-box, .testimonials .testimonial-item {
-                width: 100%;
-            }
-
-            .testimonials {
-                padding: 20px 10px;
-            }
-        }
-    </style>
 </head>
+
 <body>
 
-    <!-- Navbar -->
-    <nav>
-        <div class="logo">
-            <h1>Shreenagar Tent House</h1>
-        </div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+	<!-- header
+   ================================================== -->
+	<header id="main-header">
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <h1>Welcome to Shreenagar Tent House</h1>
-        <p>Your go-to event management service for weddings, parties, and celebrations in Nepal!</p>
-    </section>
+		<div class="row">
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Shreenagar Tent House is a premier event management company, specializing in providing high-quality tents, decoration, and event services for weddings, festivals, corporate events, and private parties. Our goal is to make every event a memorable experience, blending tradition with modern elegance.</p>
-    </section>
+			<div class="logo">
+				<a href="index.html">Shreenagar Tent House</a>
+			</div>
 
-    <!-- Services Section -->
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="services">
-            <div class="service-box">
-                <img src="https://via.placeholder.com/250" alt="Event Planning">
-                <h3>Event Planning</h3>
-                <p>We handle every aspect of your event, from concept to execution, ensuring a seamless experience.</p>
-            </div>
-            <div class="service-box">
-                <img src="https://via.placeholder.com/250" alt="Tent Rentals">
-                <h3>Tent Rentals</h3>
-                <p>Choose from a wide variety of tents for your events, ranging from intimate gatherings to grand celebrations.</p>
-            </div>
-            <div class="service-box">
-                <img src="https://via.placeholder.com/250" alt="Decorations">
-                <h3>Event Decorations</h3>
-                <p>Our team creates stunning decorations that reflect the cultural richness of Nepali events and festivals.</p>
-            </div>
-        </div>
-    </section>
+			<nav id="nav-wrap">
+				<a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+					<span class="menu-icon">Menu</span>
+				</a>
+				<a class="mobile-btn" href="#" title="Hide navigation">
+					<span class="menu-icon">Menu</span>
+				</a>
 
-    <!-- Gallery Section -->
-    <section id="gallery">
-        <h2>Gallery</h2>
-        <div class="gallery">
-            <img src="https://via.placeholder.com/800x500" alt="Event Image 1">
-            <img src="https://via.placeholder.com/800x500" alt="Event Image 2">
-            <img src="https://via.placeholder.com/800x500" alt="Event Image 3">
-        </div>
-    </section>
+				<ul id="nav" class="nav">
+					<li class="current"><a class="smoothscroll" href="#hero">Home.</a></li>
+					<li><a class="smoothscroll" href="#portfolio">Gallery.</a></li>
+					<li><a class="smoothscroll" href="#services">Services.</a></li>
+					<li><a class="smoothscroll" href="#about">About.</a></li>
+					<li><a class="smoothscroll" href="#contact">Contact.</a></li>
+				</ul>
+			</nav>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <h2>What Our Clients Say</h2>
-        <div class="testimonial-item">
-            <p>"Shreenagar Tent House made our wedding a dream come true! The decorations were breathtaking and the service was excellent."</p>
-            <h4>Rina & Sanjay</h4>
-        </div>
-        <div class="testimonial-item">
-            <p>"We rented a tent for our family gathering, and everything was perfect! Highly recommend their services."</p>
-            <h4>Sarita & Rajesh</h4>
-        </div>
-        <div class="testimonial-item">
-            <p>"Professional and reliable! Shreenagar Tent House handled our corporate event with precision and creativity."</p>
-            <h4>Suraj & Team</h4>
-        </div>
-    </section>
+			<ul class="header-social">
+				<li>
+					<a href="https://www.facebook.com/shreenagar.tent.house" target="_blank">
+						<i class="fa fa-facebook"></i>
+					</a>
+				</li>
+				<!-- You can add more social links as needed -->
+			</ul>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>If you'd like to book our services or inquire more about our offerings, please reach out to us below:</p>
-        <p>Email: <a href="mailto:info@shreenagartent.com">info@shreenagartent.com</a></p>
-        <p>Phone: +977 01 2345678</p>
-        <p>Address: Shreenagar, Kathmandu, Nepal</p>
-    </section>
+		</div>
+	</header>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Shreenagar Tent House. All rights reserved. | <a href="mailto:info@shreenagartent.com">Contact Us</a></p>
-    </footer>
+	<!-- homepage hero
+	================================================== -->
+	<section id="hero">
+		<div class="row hero-content">
+			<div class="twelve columns hero-container">
+				<!-- hero-slider start-->
+				<div id="hero-slider" class="flexslider">
+					<ul class="slides">
+
+						<!-- slide -->
+						<li>
+							<div class="flex-caption">
+								<h1>Welcome to <span>Shreenagar Tent House</span></h1>
+								<h3>
+									Bhairahawa’s trusted event management and rental service for over 15 years.<br>
+									From family celebrations to grand community events, we make every occasion
+									memorable.
+								</h3>
+							</div>
+						</li>
+
+						<!-- slide -->
+						<li>
+							<div class="flex-caption">
+								<h1>Expertise in Nepali Events</h1>
+								<h3>
+									We handle weddings, bratabanda, engagements, receptions, birthdays, Mahayagya, and
+									more—serving up to 1,500 guests with ease.
+								</h3>
+							</div>
+						</li>
+
+						<!-- slide -->
+						<li>
+							<div class="flex-caption">
+								<h1>
+									See our <a class="smoothscroll" href="#portfolio" title="Gallery">event gallery</a>
+									or
+									<a class="smoothscroll" href="#contact" title="Contact Us">contact us</a> to plan
+									your next event.
+								</h1>
+								<h3>
+									Reliable, experienced, and dedicated to making your event a success—every time.
+								</h3>
+							</div>
+						</li>
+					</ul>
+				</div> <!-- end hero-slider -->
+			</div> <!-- end twelve columns-->
+		</div> <!-- end row -->
+
+		<div id="more">
+			<a class="smoothscroll" href="#services">
+				More About Us <i class="fa fa-angle-down"></i>
+			</a>
+		</div>
+	</section>
+
+	<!-- portfolio
+   ================================================== -->
+	<section id="portfolio">
+
+		<div class="row section-head">
+			<div class="twelve columns">
+				<h1>Our Recent Events<span>.</span></h1>
+				<hr />
+				<p>
+					Discover some of the beautiful and memorable events we’ve managed across Nepal. From elegant
+					weddings to vibrant religious gatherings, Shreenagar Tent House brings your vision to life with
+					creativity and care.
+				</p>
+			</div>
+		</div> <!-- end section-head -->
+
+		<div class="row items">
+			<!-- portfolio-wrapper -->
+			<div id="portfolio-wrapper" class="bgrid-fourth s-bgrid-third tab-bgrid-half">
+
+				<div class="bgrid folio-item">
+					<div class="item-wrap">
+						<a href="#modal-01">
+							<img src="images/portfolio/underwater.jpg" alt="Wedding Reception">
+							<div class="overlay"></div>
+							<div class="portfolio-item-meta">
+								<h5>Grand Wedding Reception</h5>
+								<p>Elegant tent setup, floral décor, and lighting for a 1,000+ guest celebration.</p>
+							</div>
+							<div class="link-icon"><i class="fa fa-plus"></i></div>
+						</a>
+					</div>
+				</div> <!-- item end -->
+
+				<div class="bgrid folio-item">
+					<div class="item-wrap">
+						<a href="#modal-02">
+							<img src="images/portfolio/hotel.jpg" alt="Engagement Ceremony">
+							<div class="overlay">
+								<div class="portfolio-item-meta">
+									<h5>Engagement Ceremony</h5>
+									<p>Stylish stage, sound system, and seating for a memorable engagement.</p>
+								</div>
+							</div>
+							<div class="link-icon"><i class="fa fa-plus"></i></div>
+						</a>
+					</div>
+				</div> <!-- item end -->
+
+				<div class="bgrid folio-item">
+					<div class="item-wrap">
+						<a href="#modal-03">
+							<img src="images/portfolio/beetle.jpg" alt="Bratabanda Event">
+							<div class="overlay">
+								<div class="portfolio-item-meta">
+									<h5>Bratabanda Ritual</h5>
+									<p>Traditional setup for sacred ceremonies with full event support.</p>
+								</div>
+							</div>
+							<div class="link-icon"><i class="fa fa-plus"></i></div>
+						</a>
+					</div>
+				</div> <!-- item end -->
+
+				<div class="bgrid folio-item">
+					<div class="item-wrap">
+						<a href="#modal-04">
+							<img src="images/portfolio/banjo-player.jpg" alt="Birthday Party">
+							<div class="overlay">
+								<div class="portfolio-item-meta">
+									<h5>Birthday Party</h5>
+									<p>Colorful décor, fun activities, and catering for all ages.</p>
+								</div>
+							</div>
+							<div class="link-icon"><i class="fa fa-plus"></i></div>
+						</a>
+					</div>
+				</div> <!-- item end -->
+
+				<div class="bgrid folio-item">
+					<div class="item-wrap">
+						<a href="#modal-05">
+							<img src="images/portfolio/lighthouse.jpg" alt="Corporate Event">
+							<div class="overlay">
+								<div class="portfolio-item-meta">
+									<h5>Corporate Gathering</h5>
+									<p>Professional arrangements for meetings, launches, and celebrations.</p>
+								</div>
+							</div>
+							<div class="link-icon"><i class="fa fa-plus"></i></div>
+						</a>
+					</div>
+				</div> <!-- item end -->
+
+				<div class="bgrid folio-item">
+					<div class="item-wrap">
+						<a href="#modal-06">
+							<img src="images/portfolio/girl.jpg" alt="Mahayagya Event">
+							<div class="overlay">
+								<div class="portfolio-item-meta">
+									<h5>Mahayagya</h5>
+									<p>Large-scale religious event management with seating, sound, and hospitality.</p>
+								</div>
+							</div>
+							<div class="link-icon"><i class="fa fa-plus"></i></div>
+						</a>
+					</div>
+				</div> <!-- item end -->
+
+				<div class="bgrid folio-item">
+					<div class="item-wrap">
+						<a href="#modal-07">
+							<img src="images/portfolio/coffee.jpg" alt="Picnic Event">
+							<div class="overlay">
+								<div class="portfolio-item-meta">
+									<h5>Family Picnic</h5>
+									<p>Outdoor fun with tents, sound system, and games for everyone.</p>
+								</div>
+							</div>
+							<div class="link-icon"><i class="fa fa-plus"></i></div>
+						</a>
+					</div>
+				</div> <!-- item end -->
+
+				<div class="bgrid folio-item">
+					<div class="item-wrap">
+						<a href="#modal-08">
+							<img src="images/portfolio/judah.jpg" alt="Reception Party">
+							<div class="overlay">
+								<div class="portfolio-item-meta">
+									<h5>Reception Party</h5>
+									<p>Stylish evening event with lighting, music, and catering services.</p>
+								</div>
+							</div>
+							<div class="link-icon"><i class="fa fa-plus"></i></div>
+						</a>
+					</div>
+				</div> <!-- item end -->
+
+			</div> <!-- end portfolio-wrapper -->
+		</div>
+	</section>
+	<!-- modal popup
+========================================================= -->
+
+	<div id="modal-01" class="popup-modal mfp-hide">
+		<div class="media">
+			<img src="images/portfolio/modals/m-underwater.jpg" alt="Grand Wedding Reception" />
+		</div>
+		<div class="description-box">
+			<h4>Grand Wedding Reception</h4>
+			<p>
+				A stunning wedding reception for over 1,000 guests, featuring elegant tent décor, ambient lighting, and
+				seamless event management. Our team ensured every detail was perfect, from the floral arrangements to
+				the sound system.
+			</p>
+			<span class="categories">Wedding, Event Management</span>
+		</div>
+		<div class="link-box group">
+			<a href="#contact">Details</a>
+			<a href="#" class="popup-modal-dismiss">Close</a>
+		</div>
+	</div><!-- modal-01 end -->
+
+	<div id="modal-02" class="popup-modal mfp-hide">
+		<div class="media">
+			<img src="images/portfolio/modals/m-hotel.jpg" alt="Engagement Ceremony" />
+		</div>
+		<div class="description-box">
+			<h4>Engagement Ceremony</h4>
+			<p>
+				A memorable engagement event with a stylish stage, premium seating, and a vibrant atmosphere. We
+				provided full event setup, including décor, sound, and hospitality services.
+			</p>
+			<span class="categories">Engagement, Event Rental</span>
+		</div>
+		<div class="link-box">
+			<a href="#contact">Details</a>
+			<a href="#" class="popup-modal-dismiss">Close</a>
+		</div>
+	</div><!-- modal-02 end -->
+
+	<div id="modal-03" class="popup-modal mfp-hide">
+		<div class="media">
+			<img src="images/portfolio/modals/m-beetle.jpg" alt="Bratabanda Ritual" />
+		</div>
+		<div class="description-box">
+			<h4>Bratabanda Ritual</h4>
+			<p>
+				Traditional bratabanda ceremony setup with authentic décor and all necessary arrangements for a sacred
+				and smooth event. Our experience ensures cultural authenticity and guest comfort.
+			</p>
+			<span class="categories">Bratabanda, Religious Event</span>
+		</div>
+		<div class="link-box">
+			<a href="#contact">Details</a>
+			<a href="#" class="popup-modal-dismiss">Close</a>
+		</div>
+	</div><!-- modal-03 end -->
+
+	<div id="modal-04" class="popup-modal mfp-hide">
+		<div class="media">
+			<img src="images/portfolio/modals/m-banjo-player.jpg" alt="Birthday Party" />
+		</div>
+		<div class="description-box">
+			<h4>Birthday Party</h4>
+			<p>
+				A fun-filled birthday celebration with colorful tents, creative decorations, and engaging activities for
+				all ages. We handle everything so you can enjoy the special day stress-free.
+			</p>
+			<span class="categories">Birthday, Family Event</span>
+		</div>
+		<div class="link-box">
+			<a href="#contact">Details</a>
+			<a href="#" class="popup-modal-dismiss">Close</a>
+		</div>
+	</div><!-- modal-04 end -->
+
+	<div id="modal-05" class="popup-modal slider mfp-hide">
+		<div class="media">
+			<img src="images/portfolio/modals/m-lighthouse.jpg" alt="Corporate Gathering" />
+		</div>
+		<div class="description-box">
+			<h4>Corporate Gathering</h4>
+			<p>
+				Professional arrangements for business meetings, product launches, and corporate celebrations. Our team
+				delivers a polished experience with quality equipment and attentive service.
+			</p>
+			<div class="categories">Corporate Event</div>
+		</div>
+		<div class="link-box">
+			<a href="#contact">Details</a>
+			<a href="#" class="popup-modal-dismiss">Close</a>
+		</div>
+	</div><!-- modal-05 end -->
+
+	<div id="modal-06" class="popup-modal mfp-hide">
+		<div class="media">
+			<img src="images/portfolio/modals/m-girl.jpg" alt="Mahayagya Event" />
+		</div>
+		<div class="description-box">
+			<h4>Mahayagya</h4>
+			<p>
+				Large-scale religious event management, including tent setup, seating for hundreds, sound systems, and
+				hospitality for multi-day functions. We ensure every aspect is handled with care and respect.
+			</p>
+			<div class="categories">Religious Event, Mahayagya</div>
+		</div>
+		<div class="link-box">
+			<a href="#contact">Details</a>
+			<a href="#" class="popup-modal-dismiss">Close</a>
+		</div>
+	</div><!-- modal-06 end -->
+
+	<div id="modal-07" class="popup-modal mfp-hide">
+		<div class="media">
+			<img src="images/portfolio/modals/m-coffee.jpg" alt="Family Picnic" />
+		</div>
+		<div class="description-box">
+			<h4>Family Picnic</h4>
+			<p>
+				Outdoor fun with robust tenting, sound system rental, and games for a perfect family picnic. We provide
+				everything you need for a relaxing and enjoyable day out.
+			</p>
+			<div class="categories">Picnic, Outdoor Event</div>
+		</div>
+		<div class="link-box">
+			<a href="#contact">Details</a>
+			<a href="#" class="popup-modal-dismiss">Close</a>
+		</div>
+	</div><!-- modal-07 end -->
+
+	<div id="modal-08" class="popup-modal mfp-hide">
+		<div class="media">
+			<img src="images/portfolio/modals/m-judah.jpg" alt="Reception Party" />
+		</div>
+		<div class="description-box">
+			<h4>Reception Party</h4>
+			<p>
+				A stylish evening event with beautiful lighting, music, and catering. Our team ensures your reception is
+				seamless, elegant, and unforgettable.
+			</p>
+			<div class="categories">Reception, Evening Event</div>
+		</div>
+		<div class="link-box">
+			<a href="#contact">Details</a>
+			<a href="#" class="popup-modal-dismiss">Close</a>
+		</div>
+	</div><!-- modal-08 end -->
+
+
+
+	<!-- Services Section
+   ================================================== -->
+	<section id="services">
+
+		<div class="row section-head">
+			<div class="twelve columns">
+				<h1>Our Event Services<span>.</span></h1>
+				<hr />
+				<p>
+					With over 15 years of experience, Shreenagar Tent House offers a complete range of event management
+					and rental services in Bhairahawa and across Nepal. Whether you are planning an intimate family
+					function or a grand celebration, our team ensures every detail is handled with care and
+					professionalism.
+				</p>
+			</div>
+		</div> <!-- end section-head -->
+
+		<div class="row mobile-no-padding">
+			<div class="service-list bgrid-third s-bgrid-half tab-bgrid-whole group">
+
+				<div class="bgrid">
+					<h3>Event Planning & Coordination</h3>
+					<div class="service-content">
+						<p>
+							From weddings and bratabanda to birthdays and corporate events, we provide end-to-end
+							planning, vendor management, and on-site coordination for a seamless experience.
+						</p>
+					</div>
+				</div> <!-- end bgrid -->
+
+				<div class="bgrid">
+					<h3>Tent & Canopy Rentals</h3>
+					<div class="service-content">
+						<p>
+							High-quality tents, canopies, and marquees for all event sizes and styles. Our setups are
+							sturdy, weather-resistant, and beautifully decorated to match your theme.
+						</p>
+					</div>
+				</div> <!-- end bgrid -->
+
+				<div class="bgrid">
+					<h3>Stage, Lighting & Sound</h3>
+					<div class="service-content">
+						<p>
+							Professional stage design, vibrant lighting, and crystal-clear sound systems for ceremonies,
+							performances, and speeches. We ensure your event looks and sounds spectacular.
+						</p>
+					</div>
+				</div> <!-- end bgrid -->
+
+				<div class="bgrid">
+					<h3>Event Décor & Theming</h3>
+					<div class="service-content">
+						<p>
+							Customized décor solutions including floral arrangements, draping, centerpieces, and themed
+							props to transform your venue into a memorable setting.
+						</p>
+					</div>
+				</div> <!-- end bgrid -->
+
+				<div class="bgrid">
+					<h3>Catering & Hospitality</h3>
+					<div class="service-content">
+						<p>
+							Delicious catering options and trained service staff to delight your guests. We handle
+							everything from snacks to full-course meals for any occasion.
+						</p>
+					</div>
+				</div> <!-- end bgrid -->
+
+				<div class="bgrid">
+					<h3>Furniture & Equipment Rental</h3>
+					<div class="service-content">
+						<p>
+							Comfortable chairs, tables, sofas, and essential event equipment available for rent. Our
+							inventory suits both small gatherings and large festivals.
+						</p>
+					</div>
+				</div> <!-- end bgrid -->
+
+			</div> <!-- end service-list -->
+		</div> <!-- end row -->
+
+	</section> <!-- end services -->
+
+
+
+	<!-- About Section
+   ================================================== -->
+	<section id="about">
+
+		<div class="row section-head">
+
+			<div class="twelve columns">
+
+				<h1>Who Are We<span>.</span></h1>
+
+				<hr />
+
+				<p>
+					Shreenagar Tent House is a premier event management and rental service provider based in Bhairahawa,
+					Nepal. With over 15 years of experience, we specialize in organizing a wide range of Nepali events
+					including weddings, bratabanda, engagements, receptions, birthdays, and large religious gatherings
+					like Mahayagya. Our commitment to quality, reliability, and personalized service has made us a
+					trusted partner for clients across Nepal.
+				</p>
+
+			</div> <!-- end section-head -->
+
+		</div>
+
+		<div class="row mobile-no-padding">
+
+			<div class="process bgrid-half tab-bgrid-whole group">
+
+				<div class="bgrid">
+
+					<h3>Our Process.</h3>
+					<p>
+						We begin by understanding your vision and requirements, followed by meticulous planning and
+						coordination. Our team manages every detail from vendor selection to on-site execution, ensuring
+						a seamless and memorable event.
+					</p>
+				</div>
+
+				<div class="bgrid">
+
+					<h3>Our Approach.</h3>
+					<p>
+						We believe in personalized service, cultural sensitivity, and attention to detail. Our approach
+						combines traditional Nepali event customs with modern event management techniques to deliver
+						exceptional experiences.
+					</p>
+				</div>
+
+				<div class="bgrid">
+
+					<h3>Our Goal.</h3>
+					<p>
+						Our goal is to make every event unique and unforgettable, providing professional support that
+						allows our clients to enjoy their special occasions without stress.
+					</p>
+				</div>
+
+				<div class="bgrid">
+
+					<h3>Our Mission.</h3>
+					<p>
+						To be the leading event management and rental service in Nepal, known for excellence,
+						reliability, and heartfelt service.
+					</p>
+				</div>
+
+			</div> <!-- end process -->
+
+		</div> <!-- end row -->
+
+
+		<div class="row team section-head">
+
+			<div class="twelve columns">
+
+				<h1>Meet Our Team<span>.</span></h1>
+
+				<hr />
+
+			</div>
+
+		</div> <!-- end section-head -->
+
+		<div class="row">
+
+			<div id="team-wrapper" class="bgrid-fourth s-bgrid-third tab-bgrid-half mob-bgrid-whole group">
+
+				<div class="bgrid member">
+
+					<div class="member-pic">
+						<img src="images/team/member01-k.jpg" alt="Owner - Ram Bahadur" />
+						<div class="mask"></div>
+					</div>
+					<div class="member-name">
+						<h3>Ram Bahadur</h3>
+						<span>Owner & Founder</span>
+					</div>
+
+					<p>
+						Ram Bahadur has over 15 years of experience in event management and is the visionary behind
+						Shreenagar Tent House. His dedication to quality and client satisfaction drives the company’s
+						success.
+					</p>
+
+					<ul class="member-social">
+						<li><a href="https://www.facebook.com/shreenagar.tent.house" target="_blank"><i
+									class="fa fa-facebook"></i></a></li>
+					</ul>
+
+				</div> <!-- end member -->
+
+				<div class="bgrid member">
+
+					<div class="member-pic">
+						<img src="images/team/member02-k.jpg" alt="Event Manager - Sita Devi" />
+						<div class="mask"></div>
+					</div>
+					<div class="member-name">
+						<h3>Sita Devi</h3>
+						<span>Event Manager</span>
+					</div>
+
+					<p>
+						Sita Devi coordinates all event logistics and client communications, ensuring smooth execution
+						and attention to detail for every occasion.
+					</p>
+
+					<ul class="member-social">
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+					</ul>
+
+				</div> <!-- end member -->
+
+				<div class="bgrid member">
+
+					<div class="member-pic">
+						<img src="images/team/member03-k.jpg" alt="Lead Coordinator - Ram Kumar" />
+						<div class="mask"></div>
+					</div>
+					<div class="member-name">
+						<h3>Ram Kumar</h3>
+						<span>Lead Coordinator</span>
+					</div>
+
+					<p>
+						Ram Kumar oversees event setups and vendor management, bringing years of experience to ensure
+						flawless event delivery.
+					</p>
+
+					<ul class="member-social">
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+					</ul>
+
+				</div> <!-- end member -->
+
+				<div class="bgrid member">
+
+					<div class="member-pic">
+						<img src="images/team/member04-k.jpg" alt="Logistics Head - Maya Shrestha" />
+						<div class="mask"></div>
+					</div>
+					<div class="member-name">
+						<h3>Maya Shrestha</h3>
+						<span>Logistics Head</span>
+					</div>
+
+					<p>
+						Maya Shrestha manages all logistics and equipment rentals, ensuring timely delivery and setup
+						for every event.
+					</p>
+
+					<ul class="member-social">
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+					</ul>
+
+				</div> <!-- end member -->
+
+			</div> <!-- end team-wrapper -->
+
+		</div> <!-- end row -->
+
+		<div id="call-to-action">
+
+			<div class="row section-ads">
+
+				<div class="twelve columns">
+
+					<h2><a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Styleshout Recommends
+							Dreamhost<span>.</span></a></h2>
+
+					<p>
+						Looking for an awesome and reliable webhosting? Try <a
+							href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT"><span>DreamHost</span></a>.
+						Get <span>$50 off</span> when you sign up with the promocode <span>styleshout</span>.
+					</p>
+
+					<div class="action">
+						<a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Sign Up Now</a>
+					</div>
+
+				</div>
+
+			</div> <!-- end section-ads -->
+
+		</div> <!-- end call-to-action -->
+
+	</section> <!-- end about -->
+
+
+	<!-- Testimonials Section
+   ================================================== -->
+	<section id="testimonials">
+
+		<div class="row content flex-container">
+
+			<div id="testimonial-slider" class="flexslider">
+
+				<ul class="slides">
+					<li>
+						<p>
+							Shreenagar Tent House made our wedding day absolutely perfect! The decorations were
+							beautiful and the team handled everything so smoothly. Our guests were truly impressed.
+							Thank you for making our special day stress-free and memorable!
+						</p>
+						<div class="testimonial-author">
+							<img src="images/avatars/avatar-1.jpg" alt="Author image">
+							<div class="author-info">
+								Sita Sharma
+								<span class="position">Bride, Bhairahawa</span>
+							</div>
+						</div>
+					</li> <!-- end slide -->
+
+					<li>
+						<p>
+							We have worked with Shreenagar Tent House for several family events and every time they
+							exceed our expectations. Their attention to detail and professionalism is unmatched in
+							Bhairahawa. Highly recommended for any event!
+						</p>
+						<div class="testimonial-author">
+							<img src="images/avatars/avatar-2.jpg" alt="Author image">
+							<div class="author-info">
+								Rajesh Thapa
+								<span>Family Event Host</span>
+							</div>
+						</div>
+					</li> <!-- end slide -->
+
+					<li>
+						<p>
+							Our Mahayagya event was a huge success thanks to the excellent arrangements by Shreenagar
+							Tent House. They managed everything from tents to sound systems for hundreds of guests, and
+							the service was outstanding.
+						</p>
+						<div class="testimonial-author">
+							<img src="images/avatars/avatar-3.jpg" alt="Author image">
+							<div class="author-info">
+								Sunil Shrestha
+								<span>Event Organizer, Rupandehi</span>
+							</div>
+						</div>
+					</li> <!-- end slide -->
+
+				</ul> <!-- end slides -->
+
+			</div> <!-- end flexslider -->
+
+		</div> <!-- end row -->
+
+	</section> <!-- end testimonials section -->
+
+
+	<!-- contact
+   ================================================== -->
+	<section id="contact">
+
+		<div class="row section-head">
+			<div class="twelve columns">
+				<h1>Get In Touch With Us<span>.</span></h1>
+				<hr />
+			</div>
+		</div> <!-- end section-head -->
+
+		<div class="row">
+
+			<div id="contact-form" class="six columns tab-whole left">
+
+				<!-- form -->
+				<form name="contactForm" id="contactForm" method="post" action="">
+					<fieldset>
+						<div class="group">
+							<input name="contactName" type="text" id="contactName" placeholder="Name" minLength="2"
+								required />
+						</div>
+						<div>
+							<input name="contactEmail" type="email" id="contactEmail" placeholder="Email" required />
+						</div>
+						<div>
+							<input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" />
+						</div>
+						<div>
+							<textarea name="contactMessage" id="contactMessage" placeholder="Message" rows="10"
+								cols="50" required></textarea>
+						</div>
+						<div>
+							<button class="submitform">Submit</button>
+							<div id="submit-loader">
+								<div class="text-loader">Sending...</div>
+								<div class="s-loader">
+									<div class="bounce1"></div>
+									<div class="bounce2"></div>
+									<div class="bounce3"></div>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</form> <!-- Form End -->
+
+				<!-- contact-warning -->
+				<div id="message-warning"></div>
+				<!-- contact-success -->
+				<div id="message-success">
+					<i class="icon-ok"></i>Your message was sent, thank you!<br />
+				</div>
+
+			</div>
+
+			<div class="six columns tab-whole right">
+
+				<p class="lead">
+					Have a question or want to book us for your next event? Reach out to Shreenagar Tent House and our
+					team will be happy to assist you with all your event management and rental needs.
+				</p>
+
+				<h3 class="address">Come Visit</h3>
+				<p>
+					Shreenagar Tent House<br>
+					Buddha Road, Bhairahawa<br>
+					Rupandehi, Nepal
+				</p>
+
+				<h3>Contact Numbers:</h3>
+				<p>
+					Mobile/WhatsApp: +977 9857012152<br>
+					<!-- Add more numbers if needed -->
+				</p>
+
+				<h3>Email:</h3>
+				<p>
+					<a href="mailto:shreenagartenthouse@gmail.com">shreenagartenthouse@gmail.com</a>
+				</p>
+
+				<h3>Follow Us:</h3>
+				<p>
+					<a href="https://www.facebook.com/shreenagar.tent.house" target="_blank">
+						<i class="fa fa-facebook"></i> Facebook
+					</a>
+				</p>
+
+			</div>
+
+		</div> <!-- end row -->
+
+	</section> <!-- end contact -->
+
+
+
+	<!-- Footer
+   ================================================== -->
+	<footer>
+		<div class="row">
+
+			<div class="twelve columns content group">
+
+				<ul class="social-links">
+					<li>
+						<a href="https://www.facebook.com/shreenagar.tent.house" target="_blank">
+							<i class="fa fa-facebook-square"></i>
+						</a>
+					</li>
+					<!-- Add more social links as you create them -->
+				</ul>
+
+				<hr />
+
+				<div class="info">
+
+					<div class="footer-logo">
+						<strong>Shreenagar Tent House</strong>
+					</div>
+
+					<p>
+						Shreenagar Tent House is Bhairahawa’s trusted event management and rental partner, serving Nepal
+						for over 15 years. From intimate gatherings to grand celebrations, we deliver seamless events
+						and unforgettable memories.
+					</p>
+
+				</div>
+
+			</div>
+
+			<ul class="copyright">
+				<li>&copy; 2025 Shreenagar Tent House. All rights reserved.</li>
+				<li>Website by <a href="https://www.facebook.com/shreenagar.tent.house" target="_blank">Shreenagar Tent
+						House</a>.</li>
+			</ul>
+
+			<div id="go-top">
+				<a class="smoothscroll" title="Back to Top" href="#hero">Back to Top<i class="fa fa-angle-up"></i></a>
+			</div>
+
+		</div> <!-- end row -->
+
+	</footer> <!-- end footer -->
+
+	<div id="preloader">
+		<div id="loader"></div>
+	</div>
+
+	<!-- Java Script
+   ================================================== -->
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="js/jquery.flexslider-min.js"></script>
+	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/jquery.fittext.js"></script>
+	<script src="js/jquery.placeholder.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/main.js"></script>
 
 </body>
+
 </html>
